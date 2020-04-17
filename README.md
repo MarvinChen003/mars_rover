@@ -40,3 +40,9 @@ https://blog.csdn.net/qq_19339041/article/details/80088237
 9. 转向检查，坐标设置, (纵轴x, 横轴y)
 
 10. 给Mars坐标系，添加边界，例如（10,10）
+
+11. 重构 rover move conditions to toolbox
+
+    ![matrix](pic/matrix.PNG)
+
+12. 构建矩阵，利用反射减少 if 判断
