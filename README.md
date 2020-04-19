@@ -46,3 +46,5 @@ https://blog.csdn.net/qq_19339041/article/details/80088237
     ![matrix](pic/matrix.PNG)
 
 12. 构建矩阵，利用反射减少 if 判断
+
+13. 整理类方法

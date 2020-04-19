@@ -42,28 +42,33 @@ class Rover:
     def init_position(self):
         return [self.x, self.y, self.orientation]
 
-    def edge_check(self):
+    @staticmethod
+    def turn_around(command):
+        if command in ['N', 'S', 'W', 'E']:
+            return True
+
+    def reach_edge(self):
         mars = Planet(10, 10)
         if self.x == mars.edge_x or self.y == mars.edge_y or self.x == 0 or self.y == 0:
             return True
 
-    def move(self, edge_check, commands):
+    def move(self, command):
+        command_matrix_key = self.orientation + command
+        axis = COMMAND_MATRIX[command_matrix_key][0]
+        move = COMMAND_MATRIX[command_matrix_key][1]
+        # reflection
+        setattr(self, axis, move(getattr(self, axis)))
+
+    def execute_command(self, commands):
 
         for command in commands:
-            reach_edge = edge_check()
-            if reach_edge:
-                return f'Reach the edge in x ray, current position [{self.x}, {self.y}, {self.orientation}]'
 
-            if command in ['N', 'S', 'W', 'E']:
+            if self.reach_edge():
+                return f'Reach the edge, stop. Current position [{self.x}, {self.y}, {self.orientation}]'
+
+            if self.turn_around(command):
                 self.orientation = command
             else:
-                action_command = self.orientation + command
-                axis = COMMAND_MATRIX[action_command][0]
-                move = COMMAND_MATRIX[action_command][1]
-                # reflection
-                position = getattr(self, axis)
-                setattr(self, axis, move(position))
+                self.move(command)
 
         return [self.x, self.y, self.orientation]
-
-
