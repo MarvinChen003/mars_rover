@@ -41,6 +41,9 @@ https://blog.csdn.net/qq_19339041/article/details/80088237
 
 10. 给Mars坐标系，添加边界，例如（10,10）
 
+***
+=== day 2 ===
+
 11. 重构 rover move conditions to toolbox
 
     ![matrix](pic/matrix.PNG)
@@ -48,3 +51,12 @@ https://blog.csdn.net/qq_19339041/article/details/80088237
 12. 构建矩阵，利用反射减少 if 判断
 
 13. 整理类方法
+
+***
+=== day 3 ===
+
+14. 使用设计模式 [命令模式](https://blog.csdn.net/ruguowoshiyu/article/details/80865812)
+
+15. [贪婪算法和动态规划](https://blog.csdn.net/qq_33848737/article/details/77466665) Information Only
+
+16. The only commands you can give the rover are f,b,l, and r.
